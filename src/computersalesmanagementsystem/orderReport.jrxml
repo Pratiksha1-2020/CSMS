@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7e7f60d-f3e0-474c-87aa-bbdc93b0a853">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from temp_order]]>
+	</queryString>
+	<field name="COMP_ID" class="java.math.BigDecimal"/>
+	<field name="PRICE" class="java.lang.Double"/>
+	<field name="QUANTITY" class="java.math.BigDecimal"/>
+	<group name="COMP_ID">
+		<groupExpression><![CDATA[$F{COMP_ID}]]></groupExpression>
+	</group>
+	<group name="PRICE">
+		<groupExpression><![CDATA[$F{PRICE}]]></groupExpression>
+	</group>
+	<group name="QUANTITY">
+		<groupExpression><![CDATA[$F{QUANTITY}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="49" y="19" width="213" height="46" uuid="6e51afcd-e780-40db-a84b-e627ccaab592"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Computer Point]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="24" y="20" width="100" height="20" uuid="9d32403b-96b9-4b19-9710-5ef5409011de"/>
+				<text><![CDATA[COMP_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="20" width="100" height="20" uuid="d0322254-5bab-4fcb-b2ff-d63a3093c96b"/>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="20" width="100" height="20" uuid="b1713734-dd3d-41f7-b227-ae7d4aa50cc6"/>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="20" width="100" height="20" uuid="91b91374-5464-4d58-b927-76ede0da8555"/>
+				<text><![CDATA[Subtotal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="24" y="21" width="100" height="20" uuid="c6148cef-d578-49a8-ad94-174d501c1342"/>
+				<textFieldExpression><![CDATA[$F{COMP_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="21" width="100" height="20" uuid="2145d910-d131-4085-b2c2-e3abd473e2a4"/>
+				<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="21" width="100" height="20" uuid="5af75f5c-8d8c-4704-9a06-cddc28fb4ae8"/>
+				<textFieldExpression><![CDATA[$F{QUANTITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="21" width="100" height="20" uuid="a3a048f6-f1c5-4353-943e-6dc673cb30ac"/>
+				<textFieldExpression><![CDATA[$F{PRICE} * $F{QUANTITY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
